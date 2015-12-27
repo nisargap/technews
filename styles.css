@@ -4,3 +4,15 @@ body {
 .chill-text {
     font-size:0.8em; color: #888;
 }
+.desc-box {
+    display:none;
+}
+.fav-button {
+    float:right;
+    background: none;
+    border:none;
+    color: #888;
+}
+.fav-button:hover {
+    color: #4682B4;
+}

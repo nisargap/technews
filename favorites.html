@@ -18,30 +18,25 @@
    <div class="container">
    <h1>tech news pool</h1>
    <i class="chill-text">Updated Every 15 Minutes</i>
-    <div ng-controller="HackerNewsCtrl">
-       
-        <div class="row">
+    <div ng-controller="FavoritesCtrl">
+       <div class="row">
            <div class="col s12 m6">
             <label>Search: <input ng-model="searchText"></label>
             </div>
         </div>
-        <a class="waves-effect waves-light btn blue darken-1" href="favorites.html">Favorites ({{ numFav }})</a><br>
-        <span class="chill-text">{{results.length}} articles found</span><br>
+        <a class="waves-effect waves-light btn blue darken-1" href="index.html">Main Page</a>
+        <button class="waves-effect waves-light btn  red darken-3" style="float:right;" ng-click="clear()">Clear All</button><br>
+        <span class="chill-text">{{results.length}} articles favorited</span><br>
 <!--        <div class="row">-->
             <span>
-                <div class="card" style="padding: 0.6em; width:200px; display:inline-block; margin: 0.5em;" ng-repeat="news in hackerNews | filter:searchText as results">
-                    <a class="card-title" style="font-size:1.4em;" target="_blank" href="{{ news.news_headline.href }}">{{news.news_headline.text}}</a>
+                <div class="card" style="padding: 0.6em; width:200px; display:inline-block; margin: 0.5em;" ng-repeat="news in favorites | filter:searchText as results">
+                    <a class="card-title" style="font-size:1.4em;" target="_blank" href="{{ news.url }}">{{news.title}}</a>
                     <div class="chill-text">
                     {{ news.src }}</div>
-                    <button class="fav-button" ng-click="favorite(news.news_headline.href, news.news_headline.text, news.src)">
-                        <i class="material-icons">grade</i></button>
-                        
-                </div>
+                    <button class="fav-button" ng-click="remove(news.url, update)">
+                        <i class="material-icons">delete</i></button>
         </span>
 <!--        </div>-->
-        <br>
-    <span class="chill-text">Sources: </span>
-    <span class="chill-text" ng-repeat="source in sources" class="display:inline;">{{ source.name }} | </span><br><br>
     </div>
     
     </div>

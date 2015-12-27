@@ -1,4 +1,5 @@
-var app = angular.module('myApp', []).factory('newsHandler', function($http){
+
+var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler', function($http){
     
     var sources = [
         {name: 'Hacker News', 
@@ -22,7 +23,9 @@ var app = angular.module('myApp', []).factory('newsHandler', function($http){
         {name: 'TechCrunch',
          api: '8ufy858c'},
         {name: 'MIT Technology Review',
-         api: '86i92cgo'}
+         api: '86i92cgo'},
+        {name: 'Naked Security',
+         api: '28nffk16'}
     ];
     
     // public key
@@ -51,8 +54,17 @@ var app = angular.module('myApp', []).factory('newsHandler', function($http){
     
     return {functions: functions, sources: sources};
     
-}).controller('HackerNewsCtrl', function($scope, $http, newsHandler) {
-
+}).controller('HackerNewsCtrl', function($scope, $http, newsHandler, localStorageService) {
+            
+            var addFavorite = function(url, title, src){
+                localStorageService.set(url, {title: title, src: src });
+                $scope.numFav = localStorageService.keys().length;
+            }
+            
+            $scope.favorite = addFavorite;
+            
+            $scope.numFav = localStorageService.keys().length;
+    
             $scope.hackerNews = [];
             var articles = newsHandler.functions;
     
@@ -82,4 +94,35 @@ var app = angular.module('myApp', []).factory('newsHandler', function($http){
                    .... AND SO ON AND SO FORTH
                    
             */
+        }).controller('FavoritesCtrl', function($scope, $http, newsHandler, localStorageService) {
+    
+            var updateFavs = function() {
+                
+                var keys = localStorageService.keys();
+                $scope.favorites = [];
+
+                for(var i = 0; i < keys.length; i++){
+                    var data = localStorageService.get(keys[i]);
+                    var favorite = {
+                        url: keys[i],
+                        title: data.title,
+                        src: data.src  
+                    };
+                    $scope.favorites.push(favorite);
+                }
+            }
+            
+            $scope.update = updateFavs;
+            $scope.remove = function(key, callback){
+                localStorageService.remove(key);
+                callback();
+            }
+            var clearFavorites = function(){
+                $scope.favorites = [];
+                localStorageService.clearAll();
+            }
+            $scope.clear = clearFavorites;
+    
+            updateFavs();
+    
         });
