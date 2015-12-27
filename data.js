@@ -1,4 +1,7 @@
-
+function setStyle(obj){
+    
+    obj.style.color = "#F88017";
+}
 var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler', function($http){
     
     var sources = [
@@ -55,7 +58,12 @@ var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler',
     return {functions: functions, sources: sources};
     
 }).controller('HackerNewsCtrl', function($scope, $http, newsHandler, localStorageService) {
-            
+            $scope.notfav = function(key){
+                if(localStorageService.get(key) != undefined){
+                    return false;
+                }
+                return true;
+            }
             var addFavorite = function(url, title, src){
                 localStorageService.set(url, {title: title, src: src });
                 $scope.numFav = localStorageService.keys().length;

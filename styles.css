@@ -14,5 +14,11 @@ body {
     color: #888;
 }
 .fav-button:hover {
-    color: #4682B4;
+    color: #F88017;
+}
+.fav-button-other {
+    float:right;
+    background: none;
+    border:none;
+    color: #F88017;
 }

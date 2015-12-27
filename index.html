@@ -33,8 +33,14 @@
                     <a class="card-title" style="font-size:1.4em;" target="_blank" href="{{ news.news_headline.href }}">{{news.news_headline.text}}</a>
                     <div class="chill-text">
                     {{ news.src }}</div>
-                    <button class="fav-button" ng-click="favorite(news.news_headline.href, news.news_headline.text, news.src)">
+                    <div ng-if="notfav(news.news_headline.href) == true">
+                    <button onclick="setStyle(this)" class="fav-button" ng-click="favorite(news.news_headline.href, news.news_headline.text, news.src)">
                         <i class="material-icons">grade</i></button>
+                    </div>
+                    <div ng-if="notfav(news.news_headline.href) == false">
+                    <button onclick="setStyle(this)" class="fav-button-other" ng-click="favorite(news.news_headline.href, news.news_headline.text, news.src)">
+                        <i class="material-icons">grade</i></button>
+                    </div>
                         
                 </div>
         </span>
