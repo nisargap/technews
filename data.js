@@ -122,12 +122,15 @@ var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler',
             
             $scope.update = updateFavs;
             $scope.remove = function(key, callback){
+                new Audio('delete.mp3').play();
                 localStorageService.remove(key);
                 callback();
             }
             var clearFavorites = function(){
+                new Audio('delete.mp3').play();
                 $scope.favorites = [];
                 localStorageService.clearAll();
+                
             }
             $scope.clear = clearFavorites;
     
