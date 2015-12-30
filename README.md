@@ -16,6 +16,12 @@ Author: **Nisarga Patel**
 * [ ] User can add articles to user defined categories
 * [ ] User can add their own news source
 
+## Demo
+
+Here's a walkthrough of the implemented user stories:
+
+<img src="http://i.imgur.com/HokEg6L.gif" alt="tnp demo" title="Tech News Pool Demo" />
+
 ## Languages and Frameworks
 
 * [**AngularJS**](https://angularjs.org/) was used for templating and controllers
