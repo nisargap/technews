@@ -1,6 +1,6 @@
 # Personal Project - *Tech News Pool*
 
-**Tech News Pool** is a web application that allows one to search news across multiple sources such as Hacker News, Google News, Lifehacker, Gizmodo, CNN Tech, Ars Technica.
+[**Tech News Pool**](http://nisargap.github.io/technews) is a web application that allows one to search news across multiple sources such as Hacker News, Google News, Lifehacker, Gizmodo, CNN Tech, Ars Technica.
 
 Author: **Nisarga Patel**
 
