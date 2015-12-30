@@ -29,6 +29,7 @@
         <span class="chill-text">{{results.length}} articles found</span><br>
 <!--        <div class="row">-->
             <span>
+               
                 <div class="card" style="padding: 0.6em; width:200px; display:inline-block; margin: 0.5em;" ng-repeat="news in hackerNews | filter:searchText as results">
                     <a class="card-title" style="font-size:1.4em;" target="_blank" href="{{ news.news_headline.href }}">{{news.news_headline.text}}</a>
                     <div class="chill-text">

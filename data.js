@@ -28,7 +28,9 @@ var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler',
         {name: 'MIT Technology Review',
          api: '86i92cgo'},
         {name: 'Naked Security',
-         api: '28nffk16'}
+         api: '28nffk16'},
+        {name: 'Reuters',
+         api: '278a9wes'}
     ];
     
     // public key
@@ -136,4 +138,8 @@ var app = angular.module('myApp', ['LocalStorageModule']).factory('newsHandler',
     
             updateFavs();
     
-        });
+        }).filter('trustAsResourceUrl', ['$sce', function($sce) {
+    return function(val) {
+        return $sce.trustAsResourceUrl(val);
+    };
+}]);
