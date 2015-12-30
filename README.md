@@ -18,7 +18,8 @@ Author: **Nisarga Patel**
 
 ## Languages and Frameworks
 
-* **AngularJS** was used for templating and controllers
+* [**AngularJS**](https://angularjs.org/) was used for templating and controllers
 * [**Angular Local Storage Module**](https://github.com/grevory/angular-local-storage) for storing favorites in browser local storage
-* **HTML5**
+* [**Kimono Labs**](https://www.kimonolabs.com/)
+* [**HTML5**](http://www.w3.org/TR/html5/)
 * [**Materialize CSS Framework**](http://materializecss.com/) for the nice looking UI elements
