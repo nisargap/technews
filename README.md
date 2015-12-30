@@ -1,6 +1,6 @@
 # Personal Project - *Tech News Pool*
 
-[**Tech News Pool**](http://nisargap.github.io/technews) is a web application that allows one to search news across multiple sources such as Hacker News, Google News, Lifehacker, Gizmodo, CNN Tech, Ars Technica.
+[**Tech News Pool**](http://nisargap.github.io/technews) is a web application that allows one to search news across multiple sources such as Hacker News, Google News, Lifehacker, Gizmodo, CNN Tech, Ars Technica. News headlines are taken from these locations every 15 minutes by custom built APIs.
 
 Author: **Nisarga Patel**
 
@@ -20,6 +20,6 @@ Author: **Nisarga Patel**
 
 * [**AngularJS**](https://angularjs.org/) was used for templating and controllers
 * [**Angular Local Storage Module**](https://github.com/grevory/angular-local-storage) for storing favorites in browser local storage
-* [**Kimono Labs**](https://www.kimonolabs.com/)
+* [**Kimono Labs**](https://www.kimonolabs.com/) for the creation of the news scraping APIs
 * [**HTML5**](http://www.w3.org/TR/html5/)
 * [**Materialize CSS Framework**](http://materializecss.com/) for the nice looking UI elements
